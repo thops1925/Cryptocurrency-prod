@@ -45,7 +45,7 @@ function App() {
             style={{ color: 'white', textAlign: 'center' }}
           >
             Cryptoverse <br />
-            all rights reserved.
+            All rights reserved.
           </Typography.Title>
 
           <Space>

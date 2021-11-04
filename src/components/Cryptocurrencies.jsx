@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Card, Row, Col, Input } from 'antd';
 
 import { useGetCryptoQuery } from '../services/cryptoApi';
-import { ImageTwoTone } from '@material-ui/icons';
 
 function Cryptocurrencies({ simplified }) {
   const count = simplified ? 10 : 100;
@@ -35,8 +34,8 @@ function Cryptocurrencies({ simplified }) {
 
       <Row gutter={[32, 32]} className="crypto-card-container">
         {cryptos?.map((item) => (
-          <Col xs={24} sm={12} lg={6} className="crypto-card" key={item.id}>
-            <Link to={`/cryto/${item.id}`}>
+          <Col xs={24} sm={12} lg={6} className="crypto-card" key={item.uuid}>
+            <Link to={`/cryto/${item.uuid}`}>
               <Card
                 title={`${item.rank} ${item.name}`}
                 extra={
