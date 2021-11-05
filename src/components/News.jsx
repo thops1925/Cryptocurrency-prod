@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { Select, Card, Typography, Row, Col, Avatar } from 'antd';
-import { useGetNewsQuery } from '../services/cryptoNewApi';
 import moment from 'moment';
+
+import { useGetNewsQuery } from '../services/cryptoNewApi';
 import { useGetCryptoQuery } from '../services/cryptoApi';
-import { Option } from 'antd/lib/mentions';
 
 const demo = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 
 const { Text, Title } = Typography;
-const { Options } = Select;
+const { Option } = Select;
 
 function News({ simplified }) {
   const [newsCategory, setNewsCategory] = useState('Cryptocurrency');
   const { data: news } = useGetNewsQuery({
-    newsCategory: 'Cryptocurrency',
+    newsCategory,
     count: simplified ? 6 : 12,
   });
   const { data } = useGetCryptoQuery(100);
