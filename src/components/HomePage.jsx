@@ -11,6 +11,7 @@ function HomePage() {
   const { data, isFetching } = useGetCryptoQuery(10);
   const globalStats = data?.data?.stats;
   if (isFetching) return <Loader />;
+  console.log(globalStats);
   return (
     <>
       <Title level={2} className="heading">

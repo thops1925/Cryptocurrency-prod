@@ -44,8 +44,9 @@ function News({ simplified }) {
           </Select>
         </Col>
       )}
-      {cryptoNews.map((item, i) => (
-        <Col xs={24} sm={12} lg={8} key={i}>
+
+      {cryptoNews.map((item, index) => (
+        <Col xs={24} sm={12} lg={8} key={index}>
           <Card hoverable className="news-card">
             <a href={item.url} target="_blank" rel="noreferrer">
               <div className="news-image-container">
