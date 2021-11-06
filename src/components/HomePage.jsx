@@ -4,13 +4,13 @@ import { Typography, Row, Col, Statistic } from 'antd';
 import { Link } from 'react-router-dom';
 import { useGetCryptoQuery } from '../services/cryptoApi';
 import { Cryptocurrencies, News } from '../components';
+import Loader from './Loader';
 const { Title } = Typography;
 
 function HomePage() {
   const { data, isFetching } = useGetCryptoQuery(10);
   const globalStats = data?.data?.stats;
-  if (isFetching) return 'loading...';
-  console.log(data);
+  if (isFetching) return <Loader />;
   return (
     <>
       <Title level={2} className="heading">

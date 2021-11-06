@@ -22,6 +22,9 @@ export const cryptoApi = createApi({
       query: ({ coinId, timeperiod }) =>
         createRequest(`/coin/${coinId}/history/${timeperiod}`),
     }),
+    getExchange: builder.query({
+      query: () => createRequest('/exchanges'),
+    }),
   }),
 });
 
@@ -29,6 +32,7 @@ export const {
   useGetCryptoQuery,
   useGetCryptoDetailsQuery,
   useGetHistoryQuery,
+  useGetExchangeQuery,
 } = cryptoApi;
 
 // var axios = require("axios").default;
