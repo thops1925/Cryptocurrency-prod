@@ -2,16 +2,15 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const header = {
   'x-bingapis-sdk': 'true',
-  'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',
-  'x-rapidapi-key': 'b3ab83e703msh6b8609b2f8fe407p1590f4jsnd344db2af170',
+  'x-rapidapi-host': process.env.BingHost,
+  'x-rapidapi-key': process.env.BingKey,
 };
-const baseUrl = 'https://bing-news-search1.p.rapidapi.com';
 
 const request = (url) => ({ url, headers: header });
 
 export const newsApi = createApi({
   reducerPath: 'newsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.BingNewsUrl }),
   endpoints: (builder) => ({
     getNews: builder.query({
       query: ({ newsCategory, count }) =>
