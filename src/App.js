@@ -44,8 +44,8 @@ function App() {
             level={5}
             style={{ color: 'white', textAlign: 'center' }}
           >
-            Cryptoverse <br />
-            All rights reserved.
+            YAWAKA <br />
+            Thopz &copy; 2020
           </Typography.Title>
 
           <Space>
